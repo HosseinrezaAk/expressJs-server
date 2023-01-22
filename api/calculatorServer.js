@@ -17,6 +17,17 @@ app.post("/", function( req, res){
     var result = num1 + num2;
     res.send("The result is :" + result);
 });
+
+app.get("/bmicalculator", function( req , res){
+    res.sendFile(__dirname + "/bmiCalculator.html");
+});
+app.post("/bmicalculator", function( req , res){
+    var height = parseFloat(req.body.height);
+    var weight = parseFloat(req.body.weight);
+    var bmi = height/Math.pow( weight , 2 );
+    res.send("The BMI is : " + bmi);
+
+});
 app.listen(3000, function(){
     console.log("Server started on port http://localhost:3000");
 });
