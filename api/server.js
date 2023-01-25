@@ -1,6 +1,12 @@
 const express = require("express");
 const app = express();
 
+
+/**
+ *  Route:
+ *  app.METHOD(PATH, HANDLER)
+ * 
+ *  */ 
 app.get("/", function( req, res ){   // req == request , res == response
 
     res.send("<h1>Hello World</h1>");
