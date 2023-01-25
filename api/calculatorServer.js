@@ -11,7 +11,11 @@ app.get("/", function( req, res ){
 
 // Whenever a post method called with action of "/" below method will be called
 app.post("/", function( req, res){
-    res.send("Hi");
+    // console.log(req.body)  // this will show the variables got send from the HTML FORM.
+    var num1 = Number(req.body.num1);
+    var num2 = Number(req.body.num2);
+    var result = num1 + num2;
+    res.send("The result is :" + result);
 });
 app.listen(3000, function(){
     console.log("Server started on port http://localhost:3000");
