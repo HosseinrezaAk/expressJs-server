@@ -22,8 +22,8 @@ app.get("/bmicalculator", function( req , res){
     res.sendFile(__dirname + "/bmiCalculator.html");
 });
 app.post("/bmicalculator", function( req , res){
-    var height = Number(req.body.height);
-    var weight = Number(req.body.weight);
+    var height = parseFloat(req.body.height);
+    var weight = parseFloat(req.body.weight);
     var bmi = height/Math.pow( weight , 2 );
     res.send("The BMI is : " + bmi);
 
